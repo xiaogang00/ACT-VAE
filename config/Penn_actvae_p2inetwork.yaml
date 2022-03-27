@@ -1,0 +1,55 @@
+# logger options
+image_save_iter: 1000        # How often do you want to save output images during training
+image_display_iter: 10       # How often do you want to display output images during training
+display_size: 8              # How many images do you want to display each time
+snapshot_save_iter: 1000     # How often do you want to save trained models
+log_iter: 10                  # How often do you want to log the training stats
+
+# dataset options
+data_root: /
+train_data_list: training_pair_penn5.txt
+test_data_list: testing_pair_penn5.txt
+imsize: 128
+batch_size: 24
+workers: 8
+
+# optimization options
+train_epoch: 300
+weight_decay: 0.0001          # weight decay
+beta1: 0.5                    # Adam parameter
+beta2: 0.999                  # Adam parameter
+init: kaiming                 # initialization [gaussian/kaiming/xavier/orthogonal]
+lr: 0.0002                    # initial learning rate
+lr_policy: step               # learning rate scheduler
+step_size: 100000             # how often to decay learning rate
+gamma: 0.5                    # how much to decay learning rate
+
+# model options
+image_encode:
+   input_dim: 3
+   dim: 16
+   n_downsample: 5
+   activ: relu
+   pad_type: reflect  
+   n_res: 1
+   norm: in
+dec_im:
+   n_downsample: 5
+   n_res: 1
+   activ: relu
+   pad_type: reflect  
+   norm: in
+image_vae:
+   input_dim: 3
+   dim: 16
+   z_dim: 64
+   n_downsample: 5
+   activ: relu
+   pad_type: reflect  
+   n_res: 1
+   norm: in
+dis:
+   input_dim: 3
+   im_size: 256
+   gan_type: lsgan
+   n_label: 9
