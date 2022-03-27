@@ -1,4 +1,4 @@
-This is a pytorch project for the paper [**Conditional Temporal Variational AutoEncoder for Action Video Prediction**]
+This is a pytorch project for the paper **Conditional Temporal Variational AutoEncoder for Action Video Prediction**
 
 
 ## Introduction
@@ -48,6 +48,7 @@ pip install -r requirements.txt
 
 ## Prepare dataset:
 - Download Penn dataset from http://dreamdragon.github.io/PennAction and store it in one path.
+
 - the training sequences with their action ids, pose information and mask information are stored in training_pair_penn5.txt and testing_pair_penn5.txt, please modify the corresponding paths of images.
 
 ## Training
